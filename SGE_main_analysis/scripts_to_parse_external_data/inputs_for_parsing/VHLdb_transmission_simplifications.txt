@@ -1,0 +1,33 @@
+ 	not_provided
+Sporadic Germline / De novo 	Germline
+Sporadic Germline /De Novo 	Germline
+Sporadic but Unknown if somatic or Germline 	not_provided
+Sporadic Germline / Likely de novo 	Germline
+Germline (patient was adopted) 	Germline
+Mosaic Parent & Germline Offspring 	Germline
+Von Hippel-Lindau syndrome: Cerebellar Hemangioblastoma, Pancreatic Cysts 	!
+Familial: However only a Somatic Mutation was found in the HB tissue 	not_provided
+Germline 	Germline
+Homozygous 	Homozygous
+Sporadic, Germline 	Germline
+Sporadic Germline /De novo 	Germline
+Germline/ Possibly de novo 	Germline
+Sporadic Germline / likely de novo 	Germline
+De novo germline 	Germline
+germline 	Germline
+Somatic Mosaicism 	Somatic
+Inconclusive wheter de novo germline 	not_provided
+Somatic 	Somatic
+Germline / Likely de novo 	Germline
+No information 	not_provided
+Sporadic Germline/ De novo 	Germline
+Sporadic Germline /Likely De novo 	Germline
+Famlilial 	Germline
+Sporadic Germline 	Germline
+Possible de novo 	not_provided
+Not Determined 	not_provided
+Sproadic 	not_provided
+Familial (inherited from their unaffected father) 	Germline
+Germline/ Possible de novo 	Germline
+Inconclusive wheter germline de novo 	not_provided
+Germline, Inconclusive whether de novo 	Germline

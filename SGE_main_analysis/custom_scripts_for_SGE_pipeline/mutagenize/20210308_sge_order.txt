@@ -1,0 +1,64 @@
+#sge_order_worksheet for VHL SGE oligonucleotide pool order
+
+#Benchling file here:  https://benchling.com/genome_function_lab/f/lib_UmVls4gj-vhl/seq_5K12B0lk-vhl-001-enst00000256474-ccds2597/edit
+	#lifted 'sequence to mutate' from Benchling 'SGE oligo', contains PAM edits
+	#lifted 'adapter's from 'adapter' primer annotations, all in gene orientiation
+
+VHLx1c
+< [5' adapter sequence]
+GTCCGGCCCGGGTGGT
+> [3' adapter sequence]
+gagtccggcccggagg
+$ [sequence to mutate all SNVs]
+CTGGATCGCGGAGGGAATGCCCCGGAGGGCGGAGAACTGGGACGAGGCCGAGGTAggcgccgaggaggcaggcgtcgaagagtacggccctgaagaagacggcggggaggagtcgggcgccgaggagtccggccccgaa
+
+VHLx1b
+< [5' adapter sequence]
+agtcgggcgccgagga
+> [3' adapter sequence]
+CCGCGCGTCGTGCTGC
+$ [sequence to mutate all SNVs]
+gtccggcccggaagagtccggccccgaggaactgggcgcagaggagGAGATGGAGGCCGGGCGGCCGCGGCCCGTGCTGCGCTCGGTGAACTCGCGCGAGCCCTCCCAGGTCATCTTCTGCAATCGCAGT
+
+VHLx1a
+< [5' adapter sequence]
+GAGCCCTCCCAGGTCATC
+> [3' adapter sequence]
+TTAGGCCCGACCCAGCA
+$ [sequence to mutate all SNVs]
+TTCTGCAATCGTAGTCCGCGCGTCGTGCTGCCCGTATGGCTCAACTTCGACGGCGAGCCGCAGCCCTACCCAACGCTGCCGCCTGGCACGGGCCGCCGCATACACAGCTACCGAGGTACGGGCCCGGCGC
+
+VHLx1p
+< [5' adapter sequence]
+CTCAAAGAAAAGCTGCATCC
+> [3' adapter sequence]
+ccggaagagccGACCGT
+$ [sequence to mutate all SNVs]
+TTAACACCCCATCTGTTCAGTCCTCATGACTCCAGTGGGtCAGTTCTGCGTAgtccctgccctcgtggagaacacattcctcctgggcagactgacagatgcaaagacaggaacaagccagggtcatgttggcg
+
+VHLx2
+< [5' adapter sequence]
+GTGGCTCTTTAACAACCTT
+> [3' adapter sequence]
+GTTTTACTTTTTAAAAAGATAAGGTTG
+$ [sequence to mutate all SNVs]
+TGCTTGTCCCGATAGGTCACCTTTGGCTCTTCAGAGATGCAGGGACACACGATGGGCTTCTcGTTAACCAAACTGAATTATTTGTGCCATCTCTCAATGTTGACGGACAGCCTATcTTTGCCAATATCACACTGCCAGGTACTGAC
+
+VHLx3a
+< [5' adapter sequence]
+TGAGACCCTAGTCTGCCA
+> [3' adapter sequence]
+GAAGACCACCCAAATGTGC
+$ [sequence to mutate all SNVs]
+CTGAGGATTTGGTTTTTGCCCTTCCAGTGTATACTCTGAAAGAGCGATGCCTCCAGGTTGTCCGaAGCCTAGTCAAGCCTGAGAATTACAGGAGACTGGACATCGTCAGaTCGCTCTACGAAGATCTG
+
+
+VHLx3b
+< [5' adapter sequence]
+GGAGACTGGACATCGTCA
+> [3' adapter sequence]
+TTTGATGGTACTGATGAGTCT
+$ [sequence to mutate all SNVs]
+GGTCGCTCTACGAAGATCTGGAAGACCACCCAAATGTGCAGAAAGAtCTGGAGCGGCTGACACAGGAGCGCATTGCACATCAACGaATGGGAGATTGAAGATTTCTGTTGAAACTTACACTGTTTCATCTCAGCT
+
+

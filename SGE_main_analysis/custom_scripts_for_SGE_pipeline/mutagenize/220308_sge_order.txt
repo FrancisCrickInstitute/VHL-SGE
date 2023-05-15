@@ -1,0 +1,23 @@
+#220308_sge_order.txt
+#Benchling files here: 
+#VHL:  https://benchling.com/genome_function_lab/f/lib_UmVls4gj-vhl/seq_5K12B0lk-vhl-001-enst00000256474-ccds2597/edit
+
+
+VHLx1c
+< [5' adapter sequence]
+GGGTGGTCTGGATCGC
+> [3' adapter sequence]
+gagtccggcccggagg
+$ [sequence to mutate all SNVs]
+TGAGGGAATGCCTCGGAGGGCGGAGAACTGGGACGAGGCCGAGGTAggcgccgaggaggcaggcgtcgaagagtacggacctgaagaagacggcggtgaggagtcgggcgccgaggagtccggcccTgaa
+
+VHLx1a
+< [5' adapter sequence]
+GAGCCCTCCCAGGTCATC
+> [3' adapter sequence]
+TTAGGCCCGACCCAGCA
+$ [sequence to mutate all SNVs]
+TTCTGCAATCGTAGTCCGCGCGTCGTGCTGCCCGTATGGCTCAACTTCGACGGCGAGCCGCAGCCCTACCCAACGCTGCCGCCTGGCACGGGCCGCCGCATACACAGCTACCGAGGTACGAGCCTGGCGC
+
+
+

@@ -1,0 +1,62 @@
+---
+title: "DepMap figure"
+author: "Greg Findlay"
+___
+```{}
+#Load favorite packages (most not needed for this)
+require(gridExtra)
+require(mclust)
+library(mixtools)
+require(ggplot2)
+library(plyr)
+require(VennDiagram)
+library(gam)
+library(plotROC)
+require(tidyverse)
+library(plyr)
+library(dplyr)
+require(VennDiagram)
+library(gam)
+library(plotROC)
+require(tidyverse)
+require(ggplot2)
+require(gridExtra)
+require(mclust)
+require(VennDiagram)
+library(mixtools)
+
+
+#import data frame from csv file
+VHL_depmap_df <- read.table("/Volumes/lab-findlayg/home/shared/projects/SGE/VHL/VHL_depmap_data_20221206.csv", sep=",", header=TRUE)
+
+#explore relationship between VHL mutation status and CRISPR effect
+ggplot(VHL_depmap_df, aes(x=VHL.Gene.Effect..Chronos..CRISPR..DepMap.22Q2.Public.Score..Chronos.,y=VHL.Mutations))+geom_jitter(alpha=1,height=0.3,aes(color=Primary.Disease))+theme(legend.title=element_blank(),legend.key = element_blank())+xlab("Chronos Gene Effect Score (log2)")+ylab('Mutation status')+theme(panel.background = element_rect(fill = 'white', colour = 'white'))+theme(text = element_text(size=12),axis.text.y = element_text(size=12),axis.text.x = element_text(size=12))
+
+#Simplify cancer type to either Kidney or Other
+VHL_depmap_df$cancer_type_simple <- "Other"
+VHL_depmap_df[which(VHL_depmap_df$Primary.Disease == "Kidney Cancer"),]$cancer_type_simple <- "Kidney"
+
+#explore relationship between cancer type and CRISPR effect
+ggplot(VHL_depmap_df, aes(x=VHL.Gene.Effect..Chronos..CRISPR..DepMap.22Q2.Public.Score..Chronos.,y=VHL.Mutations))+geom_jitter(alpha=1,height=0.3,aes(color=cancer_type_simple))+theme(legend.title=element_blank(),legend.key = element_blank())+xlab("Chronos Gene Effect Score (log2)")+ylab('Mutation status')+theme(panel.background = element_rect(fill = 'white', colour = 'white'))+theme(text = element_text(size=12),axis.text.y = element_text(size=12),axis.text.x = element_text(size=12))
+
+#explore relationship between ploidy and CRISPR effect
+ggplot(VHL_depmap_df, aes(x=VHL.Gene.Effect..Chronos..CRISPR..DepMap.22Q2.Public.Score..Chronos.,y=VHL.Copy.Number.log2.relative.to.ploidy...1..Copy.Number.22Q2.Public))+geom_jitter(alpha=1,height=0.3,aes(color=cancer_type_simple))+theme(legend.title=element_blank(),legend.key = element_blank())+xlab("Chronos Gene Effect Score (log2)")+ylab('Mutation status')+theme(panel.background = element_rect(fill = 'white', colour = 'white'))+theme(text = element_text(size=12),axis.text.y = element_text(size=12),axis.text.x = element_text(size=12))+geom_hline(yintercept=0.75)
+
+#make a simple category from provided data on whether or not VHL is mutated
+VHL_depmap_df$vhl_mutation_simple <- "No mutation"
+VHL_depmap_df[which(VHL_depmap_df$VHL.Mutations == "Hotspot"),]$vhl_mutation_simple <- "Mutant"
+VHL_depmap_df[which(VHL_depmap_df$VHL.Mutations == "Damaging"),]$vhl_mutation_simple <- "Mutant"
+VHL_depmap_df[which(VHL_depmap_df$VHL.Mutations == "Other non-conserving"),]$vhl_mutation_simple <- "Mutant"
+
+#create a custom color pallete
+depmap_colors = c(
+  "No mutation" = "#456CCC",
+  "Mutant" = "#882255")
+
+ggplot(VHL_depmap_df, aes(x=VHL.Gene.Effect..Chronos..CRISPR..DepMap.22Q2.Public.Score..Chronos.,y=cancer_type_simple))+geom_jitter(data=VHL_depmap_df[which(VHL_depmap_df$vhl_mutation_simple == "No mutation"),], alpha=0.5,height=0.25,aes(color=vhl_mutation_simple))+geom_jitter(data=VHL_depmap_df[which(VHL_depmap_df$vhl_mutation_simple == "Mutant"),], alpha=1,height=0.25,aes(color=vhl_mutation_simple))+theme(legend.title=element_blank(),legend.key = element_blank())+xlab("Chronos CRISPR Score for VHL (log2)")+ylab('Primary Cancer')+theme(panel.background = element_rect(fill = 'white', colour = 'white'))+theme(text = element_text(size=12),axis.text.y = element_text(size=12),axis.text.x = element_text(size=12))+scale_color_manual(values=depmap_colors)
+
+
+
+
+```
+
